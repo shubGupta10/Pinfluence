@@ -11,3 +11,12 @@ Steps :
    2. Post model in posts.js
 
 2. ab ek route banao jisme ek user ban jaaye
+
+Roadmap for routes in projects
+/route par login and signup
+/profile pe profile dikhegi and saved post dikhengi
+ ek uploaded section hoga jo baad me banega
+/feed section hoga jaha saare img hongi
+clikc krke open hogi
+/board/:boardname pe poora board dikhega.
+
