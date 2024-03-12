@@ -4,14 +4,20 @@ const userModel = require("./users");
 const postModel = require("./posts");
 const passport = require('passport');
 const localStratergy = require("passport-local")
-passport.authenticate(new localStratergy(userModel.authenticate()));
+passport.use(new localStratergy(userModel.authenticate()));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
+
+router.get('/login', function(req, res, next) {
+  res.render('login');
+});
+
+
             //yha isloggedIn bol diya to ye page tab tak nhi khulega jab tak aap login nhi hoge
-router.get('/profile', isLoggedIn ,function(req, res, next) {
+router.get('/profile', isLoggedIn,function(req, res, next) {
   res.send("profile");
 });
 
