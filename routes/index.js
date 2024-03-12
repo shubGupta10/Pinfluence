@@ -15,10 +15,14 @@ router.get('/login', function(req, res, next) {
   res.render('login');
 });
 
+router.get('/feed', function(req, res, next) {
+  res.render('feed');
+});
+
 
             //yha isloggedIn bol diya to ye page tab tak nhi khulega jab tak aap login nhi hoge
-router.get('/profile', isLoggedIn,function(req, res, next) {
-  res.send("profile");
+router.get('/profile',isLoggedIn,function(req, res, next) {
+  res.render("profile");
 });
 
 //jaise hi banda register hua wo sidha profile pe jaayega.
@@ -35,7 +39,7 @@ userModel.register(userData, req.body.password)
 
 router.post("/login",passport.authenticate("local", {
   successRedirect: "/profile",
-  failureRedirect: "/"
+  failureRedirect: "/login"
 }), function(req, res){
 });
 
@@ -49,7 +53,7 @@ router.get("/logout", function(req,res){
 
 function isLoggedIn(req,res,next){
   if(req.isAuthenticated()) return next();
-  res.redirect("/");
+  res.redirect("/login");
 }
 
 
