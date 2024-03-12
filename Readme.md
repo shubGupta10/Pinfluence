@@ -20,3 +20,10 @@ Roadmap for routes in projects
 clikc krke open hogi
 /board/:boardname pe poora board dikhega.
 
+
+Step1. hamne passport set kiya , authenticate kiya ki pehle user login krega then profile pe aayga.
+
+Step2. Creating Pages:
+issme hi create account (register) waala page banaya
+
+
