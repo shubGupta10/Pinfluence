@@ -27,3 +27,16 @@ Step2. Creating Pages:
 issme hi create account (register) waala page banaya
 
 
+Day 2 :
+now we are creating flash -> agar login krte waqt credidential incorrect ho jaaye then ek flash msg dikhe
+-> so pehle npm i flash-connect install kro then require kro 
+-> uske baad setup kro app.js me 
+-> then login route me failureflash: true kro
+-> Now error show kr do login route me
+
+----show login information----
+-> Used ejs to show login information to profile page.
+
+---Creating actual post--
+
+
