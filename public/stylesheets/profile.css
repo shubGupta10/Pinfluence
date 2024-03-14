@@ -9,6 +9,13 @@ body {
   background: #EEEEEE;
 }
 
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: start;
+}
+
 #card {
   width: 650px;
   height: 200px;

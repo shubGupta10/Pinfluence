@@ -37,6 +37,14 @@ now we are creating flash -> agar login krte waqt credidential incorrect ho jaay
 ----show login information----
 -> Used ejs to show login information to profile page.
 
----Creating actual post-- stats at 22:00
+---Creating actual post--- 
+
+-> we nee to include multer
+npm i uuid multer
+-> we have two packages first is uuid and second is multer
+
+uuid-> iske through appko unique name milta h file ka
+multer -> ek package h , jske help se image upload kr skte h.
+
 
 

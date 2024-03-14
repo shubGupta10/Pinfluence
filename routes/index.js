@@ -5,6 +5,7 @@ const postModel = require("./posts");
 const passport = require('passport');
 const localStratergy = require("passport-local")
 passport.use(new localStratergy(userModel.authenticate()));
+const upload = require("./Multer");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -19,6 +20,25 @@ router.get('/feed', function(req, res, next) {
   res.render('feed');
 });
 
+//route for post uploading                //yha jo file likha h uska name profile ke input ke andar file  is must
+router.post('/upload', isLoggedIn ,upload.single("file") , async function(req, res, next) {
+  if(!req.file){
+    return res.status(404).send("no files were given");
+  }
+  //jo file upload hui h usse save kro as a post and uska post id user kro do and post ko user ko do.
+  const user = await userModel.findOne({username: req.session.passport.user});  
+    const post = await postModel.create({
+    image: req.file.filename,
+    imageText: req.body.filecaption,
+    user:  user._id
+  });
+
+
+  user.posts.push(post._id) //post ke andar post ki id daali h.
+  await user.save(); //post save hua aur yha await laga h.
+  res.redirect("./profile");
+});
+
 
             //yha isloggedIn bol diya to ye page tab tak nhi khulega jab tak aap login nhi hoge
 router.get('/profile', isLoggedIn,  async function(req, res, next) {
@@ -26,6 +46,7 @@ router.get('/profile', isLoggedIn,  async function(req, res, next) {
     username: req.session.passport.user // jab login kr lete ho then req.session.passport me tmhara username aa jaata h
 
   })
+  .populate("posts");
   res.render("profile", {user});
 });
 
