@@ -36,7 +36,7 @@ router.post('/upload', isLoggedIn ,upload.single("file") , async function(req, r
 
   user.posts.push(post._id) //post ke andar post ki id daali h.
   await user.save(); //post save hua aur yha await laga h.
-  res.redirect("./profile");
+  res.redirect("/profile");
 });
 
 
