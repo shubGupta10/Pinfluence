@@ -5,7 +5,7 @@ const postModel = require("./posts");
 const passport = require('passport');
 const localStratergy = require("passport-local")
 passport.use(new localStratergy(userModel.authenticate()));
-const upload = require("./multer");
+const upload = require("./Multer");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -21,7 +21,7 @@ router.get('/feed', function(req, res, next) {
 });
 
 //route for post uploading                //yha jo file likha h uska name profile ke input ke andar file  is must
-router.post('/upload', isLoggedIn ,upload.single("file") , async function(req, res, next) {
+router.post('/upload', isLoggedIn , upload.single("file") , async function(req, res, next) {
   try{
   if(!req.file){
     return res.status(404).send("no files were given");
