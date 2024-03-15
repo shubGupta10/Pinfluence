@@ -1,32 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+/* New CSS for profile page layout */
 
-body {
-    margin-top: 40px;
-  /* height: 80px; */
-  font-family: 'Nunito', sans-serif;
-  letter-spacing: .1px;
-  align-items: center;
-  background: #EEEEEE;
-}
-
-.flex{
+#profile-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: start;
+  flex-direction: column;
+  align-items: center;
 }
 
-#card {
+#profile-card {
   width: 650px;
-  height: 200px;
-  margin: 0;
-  padding: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  margin-bottom: 40px;
   background: #FFFFFF;
   border-radius: 8px;
-  margin-bottom: 60px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
@@ -34,15 +18,12 @@ body {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 #info {
-  width: 100%;
-  height: 100%;
-  margin: 0 15px;
-  display: flex;
-  flex-direction: column;
+  padding: 20px;
 }
 
 #name {
@@ -56,56 +37,103 @@ body {
   color: #999999;
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: -.5px;
-  margin: 0;
-  padding: 0;
+  margin: 5px 0;
 }
 
-#stats {
-  margin: auto 0 15px 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.tagline {
+  font-size: 16px;
+  margin: 5px 0;
 }
 
-.stats-text {
-  color: #5B5B5B;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -1px;
-  margin: 0;
-  padding: 0;
+.description {
+  margin: 5px 0;
+}
+
+.form-container {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.upload-form {
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 
-.stats-text svg {
-  fill: #5B5B5B;
-  width: 20px;
-  height: 20px;
+.upload-form input[type="text"],
+.upload-form input[type="file"],
+.upload-form input[type="submit"] {
+  width: 80%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.stats-text span {
-  color: #000000;
-  font-weight: 800;
-  margin: 0 5px;
+.upload-form input[type="submit"] {
+  background-color: #0501f6;
+  color: #fff;
+  cursor: pointer;
 }
 
+.upload-form input[type="submit"]:hover {
+  background-color: #2A26FF;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin-top: 40px;
+  gap: 40px;
+}
+@media screen and (max-width: 767px) {
+  .cards {
+    justify-content: flex-start;
+  }
+  
+  .card {
+    width: calc(50% - 20px); /* Two cards per row with 20px gap */
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card:last-child {
+    margin-right: 0;
+  }
+}
+
+
+.card {
+  width: 18rem;
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+}
 #btn {
-  color: #FFFFFF;
-  font-size: 20px;
-  font-weight: 600;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
   text-align: center;
-  width: calc(100% - 20px);
-  margin: 0;
+  max-width: 200px; 
+  width: 100%; 
+  margin-top: 5px;
+  margin-bottom: 10px;
   padding: 10px;
   background: #0501f6;
   border-radius: 8px;
   cursor: pointer;
+  text-decoration: none;
+  display: block;
 }
 
 #btn:hover {
   background: #2A26FF;
 }
+
