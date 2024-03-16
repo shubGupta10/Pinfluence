@@ -22,6 +22,7 @@ clikc krke open hogi
 
 
 Step1. hamne passport set kiya , authenticate kiya ki pehle user login krega then profile pe aayga.
+we are using passport library.
 
 Step2. Creating Pages:
 issme hi create account (register) waala page banaya
