@@ -4,40 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/signup.css">
 </head>
 <body>
-  <div class="container" >
+  <div class="container">
     <div class="content">
       <!--pinfluence logo-->
       <img src="/images/uploads/icons8-pinterest-50.png" alt="logo" class="img1" />
       <p class="header">Create your Account</p>
   
-    <form action="/register" method="post">
-      <input type="text" name="fullname" placeholder="Full Name" class="detail" /><br />
-      <input type="text" name="username" placeholder="username" class="detail" /><br />
-      <input type="email" name="email" placeholder="Email" class="detail" /><br />
-      <input type="password" name="password" placeholder="Password" class="detail" />
-      <input type="submit" class="btn int" value="Register Account">
-    </form>
+      <form action="/register" method="post">
+        <input type="text" name="fullname" placeholder="Full Name" class="detail" /><br />
+        <input type="text" name="username" placeholder="username" class="detail" /><br />
+        <input type="email" name="email" placeholder="Email" class="detail" /><br />
+        <input type="password" name="password" placeholder="Password" class="detail" />
+        <input type="submit" class="btn int" value="Register Account">
+      </form>
 
       <a href="/forgot" >Forgot your password?</a >
   
-      
       <p class="or">OR</p>
-      <button class="btn fbk">
-        <i
-          class="fab fa-facebook fa-lg"
-          style="color: white; padding-right: 10px"
-        ></i
-        ><a href="#">Continue with Facebook</a></button
-      ><br />
+    
+      <br />
+  
       <button class="btn ggl">
-        <i
-          class="fab fa-google"
-          style="color: rgb(11, 241, 22); padding-right: 10px"
-        ></i
-        ><a href="#">Continue with Google</a>
+        <i class="fab fa-google" style="color: rgb(11, 241, 22); padding-right: 10px"></i>
+        <a href="/index">Go to Home</a>
       </button>
   
       <footer>
@@ -50,7 +42,5 @@
       </footer>
     </div>
   </div>
-  
-  
 </body>
 </html>

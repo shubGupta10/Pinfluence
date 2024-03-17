@@ -3,10 +3,14 @@
 /**
  * Module dependencies.
  */
+require('dotenv').config();
+var mongoose = require('mongoose')
 
 var app = require('../app');
 var debug = require('debug')('pinfluence:server');
 var http = require('http');
+
+
 
 /**
  * Get port from environment and store in Express.
@@ -14,6 +18,14 @@ var http = require('http');
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+
+// connect to MONGODB using provided connection string
+mongoose.connect(process.env.MONGOURL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Error connecting to MongoDB', err));
+
+
+
 
 /**
  * Create HTTP server.

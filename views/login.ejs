@@ -4,42 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
 <body>
-  <div class="container">
-    <div class="content">
-      <!--pinterest logo-->
-      <img src="..." alt="logo" class="img1" />
-      <p class="header">Login your Account</p>
-
-
-      <% if (error.length > 0) { %>
-        <p class="error"><%= error %></p>
-    <% } %>
-  
-    <form action="/login" method="post">
-      <input type="text" name="username" placeholder="username" class="detail" /><br />
-      <input type="password" name="password" placeholder="Password" class="detail" />
-      <input type="submit" class="btn int" value="Login Account">
-    </form>
-
-      <a href="/forgot" >Forgot your password?</a >
-  
-      
-     
-  
-      <footer>
-        <p>
-          By continuing, you agree with the Pinfluence
-          <b>Terms of Service, Privacy policy.</b>
-        </p>
-        <hr />
-        <a href="/signup">Not on Pinfluence yet? Sign up</a>
-      </footer>
+  <div class="mainDiv">
+    <div class="container">
+      <div class="content">
+        <!--pinterest logo-->
+        <img src="/images/uploads/icons8-pinterest-50.png" alt="logo" class="img1" />
+        <p class="header">Login your Account</p>
+        <% if (error.length > 0) { %>
+          <p class="error"><%= error %></p>
+        <% } %>
+        <form action="/login" method="post">
+          <input type="text" name="username" placeholder="username" class="detail" /><br />
+          <input type="password" name="password" placeholder="Password" class="detail" />
+          <input type="submit" class="btn int" value="Login Account">
+        </form>
+        <a style="font-weight: bolder;" href="/forgot" style="color: #370a0a;" >Forgot your password?</a >
+        <footer>
+          <p>
+            By continuing, you agree with the Pinfluence
+            <b>Terms of Service, Privacy policy.</b>
+          </p>
+          <hr />
+          <a style="font-weight: bolder;" href="/signup">Not on Pinfluence yet? Sign up</a>
+        </footer>
+      </div>
     </div>
   </div>
-  
-  
 </body>
 </html>

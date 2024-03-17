@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -9,31 +9,58 @@
 </head>
 
 <body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Pinfluence</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto ">
+        <li class="nav-item active  ">
+          <a class="nav-link fs-5 " href="/">Home <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link fs-5" href="/feed">Feed<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0">
+            <a class="btn btn-outline-danger my-2 my-sm-0 fs-5" href="/signup">Logout</a>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
   
-  <div class="container" id="wholeContainer">
-    <div id="card">
+  <div class="container" id="profile-container">
+    <div id="profile-card">
       <img id="avatar" src="https://images.unsplash.com/photo-1483909796554-bb0051ab60ad?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lybCUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D" alt="avatar" />
       <div id="info">
         <p id="name"><%- user.fullname %></p> <!-- Use <%- %> for escaping -->
         <p id="activity">@<%- user.username %></p> <!-- Use <%- %> for escaping -->
-        <p class="tagline">Lorem ipsum dolor sit</p>
-        <p class="description">Lorem ipsum dolor</p> <!-- Corrected class name -->
+        <p class="tagline"><%- user.email %></p>
+        <p class="description">Hi <%- user.fullname %>! Step into your world of inspiration and ideas. Let's embark on a creative journey together!</p> 
         <a href="/logout" id="btn">Logout</a>
-
-        <form action="/upload" method="post" enctype="multipart/form-data">
-          <input type="text" name="filecaption" placeholder="Some Caption">
-          <input type="file" name="file">
-          <input type="submit" value="Upload"> <!-- Added a value for the submit button -->
-        </form>
-
       </div>
     </div>
   </div>
 
+
+        <div class="container"  id="upload-Container">
+        <div style="color: rgb(13, 8, 2); font-weight: bolder; @media (max-width: 768px) { font-size: 30px;} font-size: 60px; padding: 20px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">Upload your ideas</div>
+        <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+          <input type="text" name="filecaption" placeholder="Some Caption">
+          <input type="file" name="file">
+          <input type="submit" value="Upload">
+        </form>
+      </div>
+     
+
   <div class="container">
     <div class="cards flex">
       <% user.posts.forEach(function(post){ %>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
           <img src="/images/uploads/<%- post.image %>" class="card-img-top" alt="<%- post.imageText %>"> <!-- Added alt attribute -->
           <div class="card-body">
             <h5 class="card-title"><%- post.imageText %></h5>
