@@ -8,8 +8,10 @@ passport.use(new localStratergy(userModel.authenticate()));
 const upload = require("./Multer");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
+router.get('/',  function(req, res, next) {
+  if(isLoggedIn){
+    res.render('index');
+  } 
 });
 
 router.get('/signup', function(req, res, next) { 
